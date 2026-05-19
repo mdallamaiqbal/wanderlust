@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 export function DeleteAlert({destination}) {
   const {destinationName,_id} =destination;
   const handleDelete = async()=>{
-    const res =await fetch(`http://localhost:5000/destination/${_id}`,
+    const res =await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${_id}`,
       {
         method: "DELETE",
         headers: {

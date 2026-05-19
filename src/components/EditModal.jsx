@@ -9,7 +9,7 @@ export function EditModal({ destination }) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const destination = Object.fromEntries(formData.entries());
-        const res =await fetch(`http://localhost:5000/destination/${_id}`, {
+        const res =await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${_id}`, {
             method: 'PATCH',
             headers:{
                 'content-type': 'application/json'
